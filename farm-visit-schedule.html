@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Weekend at Fortune Hollow</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --straw: #e8d5a3;
+    --earth: #6b4c2a;
+    --clay: #a0683a;
+    --cream: #faf6ed;
+    --bark: #3b2612;
+    --sage: #7a8c6e;
+    --rust: #b04a2a;
+    --milk: #f5f0e8;
+    --gold: #c9973a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--bark);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 10% 20%, rgba(107,76,42,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(122,140,110,0.08) 0%, transparent 50%);
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .header-eyebrow {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--clay);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 7vw, 3.6rem);
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1.08;
+    margin-bottom: 8px;
+  }
+
+  .header h1 em {
+    font-style: italic;
+    color: var(--clay);
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    margin: 22px 0;
+  }
+  .header-rule span {
+    height: 1px;
+    width: 90px;
+    background: var(--clay);
+    opacity: 0.35;
+    display: block;
+  }
+  .header-rule .icon { font-size: 1.3rem; }
+
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: var(--earth);
+    line-height: 1.55;
+    max-width: 480px;
+    margin: 0 auto 24px;
+  }
+
+  /* NARRATIVE INTRO */
+  .narrative {
+    background: var(--milk);
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 56px;
+    border: 1px solid rgba(107,76,42,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .narrative::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(160,104,58,0.1);
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .narrative-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 18px;
+  }
+
+  .narrative p {
+    font-size: 1.05rem;
+    color: var(--earth);
+    line-height: 1.82;
+    margin-bottom: 14px;
+  }
+
+  .narrative p:last-child { margin-bottom: 0; }
+
+  .narrative strong {
+    color: var(--bark);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* HIGHLIGHTS STRIP */
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .highlight-pill {
+    background: var(--milk);
+    border: 1px solid rgba(107,76,42,0.12);
+    border-radius: 10px;
+    padding: 16px 14px;
+    text-align: center;
+  }
+
+  .highlight-icon { font-size: 1.5rem; margin-bottom: 6px; }
+
+  .highlight-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1.3;
+  }
+
+  .highlight-sub {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--clay);
+    margin-top: 3px;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clay);
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.88rem;
+    color: var(--earth);
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-active { background: var(--rust); }
+  .dot-down   { background: var(--sage); }
+  .dot-meal   { background: var(--clay); }
+
+  /* DAY BLOCK */
+  .day-block { margin-bottom: 52px; }
+
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid rgba(107,76,42,0.2);
+  }
+
+  .day-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--bark);
+  }
+
+  .day-date {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--clay);
+  }
+
+  /* SCHEDULE ROWS */
+  .schedule-row {
+    display: grid;
+    grid-template-columns: 88px 14px 1fr;
+    gap: 0 16px;
+    position: relative;
+  }
+
+  .schedule-row:last-child .timeline-line { display: none; }
+
+  .time-col {
+    text-align: right;
+    padding-top: 3px;
+  }
+
+  .time-label {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.82rem;
+    color: var(--clay);
+    font-style: italic;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .timeline-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 1px currentColor;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-line {
+    width: 1.5px;
+    flex: 1;
+    background: rgba(107,76,42,0.18);
+    min-height: 20px;
+  }
+
+  .content-col { padding-bottom: 22px; }
+
+  .entry-card {
+    background: var(--milk);
+    border-radius: 8px;
+    padding: 14px 18px;
+    border-left: 3px solid transparent;
+  }
+
+  .entry-card.type-active { border-left-color: var(--rust); }
+  .entry-card.type-down   { border-left-color: var(--sage); }
+  .entry-card.type-meal   { border-left-color: var(--clay); }
+
+  .entry-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .entry-desc {
+    font-size: 0.95rem;
+    color: var(--earth);
+    line-height: 1.65;
+  }
+
+  .entry-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+
+  .tag-active { background: rgba(176,74,42,0.12); color: var(--rust); }
+  .tag-down   { background: rgba(122,140,110,0.15); color: var(--sage); }
+  .tag-meal   { background: rgba(160,104,58,0.12); color: var(--clay); }
+
+  /* DAY DIVIDER */
+  .day-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0 52px;
+  }
+  .day-divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px dashed rgba(107,76,42,0.22);
+  }
+  .day-divider .div-icon { font-size: 1.1rem; }
+
+  /* GUEST NOTES */
+  .tips-box {
+    background: linear-gradient(135deg, rgba(107,76,42,0.06), rgba(122,140,110,0.07));
+    border-radius: 10px;
+    padding: 26px 30px;
+    border: 1px solid rgba(107,76,42,0.13);
+    margin-top: 12px;
+  }
+  .tips-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 14px;
+  }
+  .tips-list { list-style: none; }
+  .tips-list li {
+    font-size: 0.95rem;
+    color: var(--earth);
+    line-height: 1.7;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .tips-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--clay);
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 52px;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--clay);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 500px) {
+    .schedule-row { grid-template-columns: 72px 12px 1fr; gap: 0 10px; }
+    .narrative { padding: 26px 22px; }
+    .highlights { grid-template-columns: repeat(2, 1fr); }
+    .page { padding: 32px 16px 60px; }
+  }
+
+  /* ─── SITE NAV ────────────────────────────────────────── */
+  .site-nav {
+    background: var(--bark);
+    padding: 0 24px;
+  }
+
+  .site-nav-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+
+  .site-nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .site-nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .site-nav-links a {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+
+  .site-nav-links a:hover { color: rgba(255,255,255,0.85); }
+  .site-nav-links a.active { color: var(--straw); }
+
+  /* ─── SITE FOOTER ─────────────────────────────────────── */
+  .site-footer {
+    background: #2a1a0a;
+    padding: 36px 24px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .site-footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .site-footer-sub {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.08em;
+  }
+
+  .site-footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .site-footer-links a {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .site-footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+  @media (max-width: 500px) {
+    .site-nav-links { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-nav-logo">Fortune Hollow</a>
+    <ul class="site-nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#animals">The Farm</a></li>
+      <li><a href="farm-visit-schedule.html" class="active">Full Schedule</a></li>
+      <li><a href="index.html#book">Book</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-eyebrow">Fortune Hollow · Lampasas County, Texas</div>
+    <h1>Your Weekend<br>at <em>Fortune Hollow</em></h1>
+    <div class="header-rule">
+      <span></span><span class="icon">🐄</span><span></span>
+    </div>
+    <p class="tagline">Get your hands dirty.<br>Sleep like you earned it.</p>
+  </header>
+
+  <!-- NARRATIVE INTRO -->
+  <div class="narrative">
+    <div class="narrative-title">What to expect</div>
+    <p>This isn't a petting zoo. It's a real working farm in the Texas Hill Country — and for one weekend, it's yours to be part of. You'll wake up before the sun, pull on your boots, and help milk <strong>Nan</strong>, our Jersey dairy cow, at the break of dawn. You'll collect eggs from the hen house, learn how fresh milk goes from cow to glass, and sit down to a proper farm breakfast made from ingredients you helped bring in that morning.</p>
+    <p>Along the way you'll spend time with <strong>Cognac</strong>, our Longhorn — whether that's taking him for a slow walk around the property or simply standing next to a set of horns that wide and realizing some things have to be seen in person. The afternoons belong to you: the pool, the shade, or if you're the type who genuinely can't sit still, there's always a ranch project that needs doing.</p>
+    <p>Saturday ends the right way — barn clothes swapped for something nicer, a short walk next door to the winery, and a glass of wine at golden hour with the Hill Country laid out in front of you. You'll sleep well that night. Sunday morning you won't need to be told what to do — you'll already know. <strong>That's the point.</strong></p>
+  </div>
+
+  <!-- HIGHLIGHTS STRIP -->
+  <div class="highlights">
+    <div class="highlight-pill">
+      <div class="highlight-icon">🥛</div>
+      <div class="highlight-label">Milk Nan</div>
+      <div class="highlight-sub">Jersey dairy cow</div>
+    </div>
+    <div class="highlight-pill">
+      <div class="highlight-icon">🤠</div>
+      <div class="highlight-label">Walk Cognac</div>
+      <div class="highlight-sub">Our Longhorn</div>
+    </div>
+    <div class="highlight-pill">
+      <div class="highlight-icon">🥚</div>
+      <div class="highlight-label">Collect Eggs</div>
+      <div class="highlight-sub">Straight from the hens</div>
+    </div>
+    <div class="highlight-pill">
+      <div class="highlight-icon">🧈</div>
+      <div class="highlight-label">Make Butter</div>
+      <div class="highlight-sub">From fresh cream</div>
+    </div>
+    <div class="highlight-pill">
+      <div class="highlight-icon">🍷</div>
+      <div class="highlight-label">Sunset Wine</div>
+      <div class="highlight-sub">Winery next door</div>
+    </div>
+    <div class="highlight-pill">
+      <div class="highlight-icon">🏊</div>
+      <div class="highlight-label">Pool Time</div>
+      <div class="highlight-sub">You've earned it</div>
+    </div>
+  </div>
+
+  <!-- SCHEDULE LABEL -->
+  <div class="section-label">The Full Weekend, Hour by Hour</div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot dot-active"></div> Hands-on activity</div>
+    <div class="legend-item"><div class="legend-dot dot-down"></div> Your time</div>
+    <div class="legend-item"><div class="legend-dot dot-meal"></div> Meal &amp; drinks</div>
+  </div>
+
+  <!-- FRIDAY -->
+  <div class="day-block">
+    <div class="day-header">
+      <span class="day-label">Friday Evening</span>
+      <span class="day-date">Arrival</span>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">6:00 – 7:00 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--clay);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-meal">
+          <div class="entry-tag tag-meal">Meal</div>
+          <div class="entry-title">Welcome Dinner</div>
+          <div class="entry-desc">Settle in, get comfortable, and share a home-cooked meal with your hosts. We'll walk you through the weekend, answer your questions, and give you a real sense of what tomorrow morning feels like. Fair warning: 5:30 am is real, and you'll be glad you went to bed early.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">7:00 – 8:30 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Evening Walkthrough — Meet Everyone</div>
+          <div class="entry-desc">A dusk tour of the property and your first proper introductions. You'll meet Nan and get a look at the milking setup before you're in it tomorrow morning. You'll meet Cognac — bring your camera, because that first impression tends to stop people mid-step. We'll walk the coops, show you the lay of the land, and get you oriented before the day starts in earnest.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">8:30 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--sage);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-down">
+          <div class="entry-tag tag-down">Your Time</div>
+          <div class="entry-title">Rest Up</div>
+          <div class="entry-desc">Your first Texas farm morning starts at 5:30 am. The stars out here are worth stepping outside for — but don't stay up too long.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-divider"><hr><span class="div-icon">🌅</span><hr></div>
+
+  <!-- SATURDAY -->
+  <div class="day-block">
+    <div class="day-header">
+      <span class="day-label">Saturday</span>
+      <span class="day-date">The Full Experience</span>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">5:30 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Milking Prep — Nan's Waiting</div>
+          <div class="entry-desc">This is how every morning starts at Fortune Hollow. You'll help bring Nan in, set up the milking equipment, and prep her udder — wash, forestrip, check. We'll walk you through each step and explain what we're looking for before milk ever hits the bucket. It's quieter out here at this hour than you'd expect. That part's a gift.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">6:00 – 7:00 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Morning Milking with Nan</div>
+          <div class="entry-desc">You'll work through the full milking session — attaching the milker, monitoring flow, post-dipping teats, and getting the milk cooled. Nan is a Jersey, which means her milk is exceptionally rich and creamy. We'll talk mastitis prevention, what consistent timing does for a dairy cow, and what it actually takes to keep her healthy and happy day after day.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">7:00 – 7:30 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Chicken Chores — Layers &amp; Meat Birds</div>
+          <div class="entry-desc">Open the coops, refresh water and feed, and collect the morning eggs — still warm. You'll learn a quick health check on the flock and understand the difference between managing laying hens and raising meat birds. More nuance here than most people expect.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">7:30 – 8:30 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--clay);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-meal">
+          <div class="entry-tag tag-meal">Meal</div>
+          <div class="entry-title">Breakfast — Made from What You Just Brought In</div>
+          <div class="entry-desc">Farm fresh eggs from the hens you just fed, milk from Nan still cool from this morning's session. There's something deeply satisfying about a breakfast you had a direct hand in producing. Coffee is very much part of this.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">8:30 – 10:30 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Dairy 101 — From Nan to Your Table</div>
+          <div class="entry-desc">We'll strain and chill the morning milk together, skim the cream, and make butter the old-fashioned way — a jar, your arms, a little patience, and a very satisfying result. We'll cover what A2/A2 milk is and why it matters, and if we have a good batch of cream ready, you'll taste the difference firsthand. This is one of those sessions people talk about on the drive home.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">10:30 am – Noon</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--sage);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-down">
+          <div class="entry-tag tag-down">Your Time</div>
+          <div class="entry-title">Wander, Rest, or Visit Cognac</div>
+          <div class="entry-desc">Take a slow walk out to see Cognac — he's a Longhorn with a personality that matches his horns, and he's patient with visitors who want to walk with him or linger for photos. Or just find a shaded spot and sit with it. You've already done more before noon than most people do all day.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">Noon – 1:00 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--clay);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-meal">
+          <div class="entry-tag tag-meal">Meal</div>
+          <div class="entry-title">Lunch</div>
+          <div class="entry-desc">A proper midday meal before the afternoon. Don't rush back outside — Texas does its worst between noon and three, and we plan around that on purpose.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">1:00 – 3:00 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--sage);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-down">
+          <div class="entry-tag tag-down">Your Time</div>
+          <div class="entry-title">Afternoon Rest</div>
+          <div class="entry-desc">This is non-negotiable in July. Nap, read, or just be still somewhere comfortable. The farm will still be here at three o'clock, and you'll be better for the rest.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">3:00 – 5:00 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--sage);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-down">
+          <div class="entry-tag tag-down">Your Time</div>
+          <div class="entry-title">Pool Time — or Get Your Hands Dirty</div>
+          <div class="entry-desc">The afternoon is yours. Most guests head straight for the pool — after a morning like that, every minute is deserved. But if you're the type who genuinely can't sit still, tell us and we'll put you to work on a real ranch project: fence panels, T-posts, feeders, moving the meat bird tractor. No shortage of things that need doing around here.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">5:00 – 5:30 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Evening Chores — You've Got This</div>
+          <div class="entry-desc">Back to the coops to close up for the night, top off feed and water, and get Cognac settled. Then set up for Nan's evening milking. By now you know the rhythm — and you'll start to feel the weight of what it means to do this every single day, without exception, year-round.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">6:00 – 7:00 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Evening Milking with Nan</div>
+          <div class="entry-desc">Your second session with Nan — this time you'll lead more of it. We'll talk through what a twice-daily milking schedule actually means for your life: how it shapes every day, what you do when travel comes up, how you build routines around an animal who needs you at the same time every morning and every evening, regardless of weather, plans, or how you feel.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">7:00 – 7:30 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--sage);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-down">
+          <div class="entry-tag tag-down">Your Time</div>
+          <div class="entry-title">Clean Up &amp; Change</div>
+          <div class="entry-desc">Swap the barn clothes for something a little nicer. Tonight's earned a proper evening out.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">7:30 – 9:30 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--clay);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-meal">
+          <div class="entry-tag tag-meal">Evening Out</div>
+          <div class="entry-title">Sunset Wine &amp; Dinner at the Winery Next Door</div>
+          <div class="entry-desc">A short walk from Fortune Hollow takes you to one of the Hill Country's finest spots to watch the sun go down — with a glass of wine in hand and no reason to hurry. Stay for dinner. This is where the day settles in: the quiet satisfaction of honest work, a sky you can't get anywhere near a city, and good company that earned this evening right alongside you.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">9:30 pm</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--sage);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-down">
+          <div class="entry-tag tag-down">Your Time</div>
+          <div class="entry-title">Rest</div>
+          <div class="entry-desc">Another 5:30 am coming. You'll be ready for it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-divider"><hr><span class="div-icon">🌄</span><hr></div>
+
+  <!-- SUNDAY -->
+  <div class="day-block">
+    <div class="day-header">
+      <span class="day-label">Sunday</span>
+      <span class="day-date">Depart by Noon</span>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">5:30 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Milking Prep — Your Turn to Lead</div>
+          <div class="entry-desc">This morning, you run it. Bring Nan in, set up the equipment, do the prep. We're right here if you need us — but we're going to let you work through it. Most guests are surprised by how much they already know by Sunday morning.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">6:00 – 7:00 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Morning Milking — You've Got Nan</div>
+          <div class="entry-desc">Full session, start to finish, with you in the lead. Nan is patient and forgiving with new hands — she's been doing this a lot longer than you have. Afterward we'll debrief: what came naturally, what felt uncertain, what you'd want to know more about if this were your farm.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">7:00 – 7:30 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Morning Chicken Chores — Solo</div>
+          <div class="entry-desc">Water, feed, egg collect, health check — all you. A quick debrief after on anything you noticed or want to ask about. By now you'll have a real feel for the rhythm of the flock.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">7:30 – 8:30 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--clay);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-meal">
+          <div class="entry-tag tag-meal">Meal</div>
+          <div class="entry-title">Final Breakfast</div>
+          <div class="entry-desc">Your last meal at Fortune Hollow — made from what you brought in this morning, same as yesterday. We'll talk through anything you want to know before you head out: what to research, what to read, what to think seriously about before starting something like this yourself. You'll go home with fresh eggs. That part's non-negotiable.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">8:30 – 10:00 am</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--sage);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-down">
+          <div class="entry-tag tag-down">Your Time</div>
+          <div class="entry-title">Wander &amp; Pack Up</div>
+          <div class="entry-desc">Take your time. Walk the property one more time, say a proper goodbye to Cognac, get a few last photos with Nan. No schedule, no agenda — just a quiet Hill Country morning before you head back to regular life.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-row">
+      <div class="time-col"><div class="time-label">10:00 am – Noon</div></div>
+      <div class="timeline-col">
+        <div class="timeline-dot" style="color: var(--rust);"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="content-col">
+        <div class="entry-card type-active">
+          <div class="entry-tag tag-active">Hands-on</div>
+          <div class="entry-title">Final Walkthrough &amp; Open Q&amp;A</div>
+          <div class="entry-desc">A slow last lap around Fortune Hollow together. Bring every question you've been saving. We'll talk through what we're building here, where it's headed, and what you'd need to know to start something like this yourself. You'll leave with a clear, honest picture of what this life actually looks like — the hard parts and the extraordinary parts both.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUEST NOTES -->
+  <div class="tips-box">
+    <div class="tips-title">📋 Good to Know Before You Arrive</div>
+    <ul class="tips-list">
+      <li>Bring closed-toe boots or sturdy shoes — you'll be in and around livestock, and flip-flops aren't going to work out here.</li>
+      <li>Pack clothes you don't mind getting dirty. Farm mornings are real mornings.</li>
+      <li>Bring a water bottle you'll actually use — Texas heat is not something to negotiate with, even in the early hours.</li>
+      <li>Charge your camera or phone. Cognac alone is worth the memory card space.</li>
+      <li>Come with an open mind and a willingness to feel a little uncertain — that's exactly where the learning happens.</li>
+      <li>Nothing else. We'll take care of the rest.</li>
+    </ul>
+  </div>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-logo">Fortune Hollow</div>
+  <div class="site-footer-sub">Lampasas County, Texas · Hill Country Farm Stay</div>
+  <div class="site-footer-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#schedule">Weekend Overview</a>
+    <a href="index.html#animals">The Farm</a>
+    <a href="farm-visit-schedule.html">Full Weekend Guide</a>
+    <a href="index.html#book">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
