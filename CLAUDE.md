@@ -177,6 +177,10 @@ All web assets are in `/images/`. Original iPhone files are also in the folder b
 - [x] Favicon — browser tab icon
 - [x] `<meta name="description">` — for Google search results
 - [ ] Google Analytics — add GA4 before sharing widely
+  - Go to analytics.google.com → Start measuring
+  - Account: Fortune Hollow / Property: fortunehollow.com / Timezone: Central / Currency: USD
+  - Platform: Web, URL: fortunehollow.com
+  - Copy the Measurement ID (starts with `G-`) and paste it here — Claude will add the tracking code to both pages and push
 
 ### Content
 - [ ] Hen house photo — only animal card still missing a real image
