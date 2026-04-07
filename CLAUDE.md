@@ -171,4 +171,26 @@ All web assets are in `/images/`. Original iPhone files are also in the folder b
 
 ---
 
+## Todo List
+
+### Technical
+- [x] Favicon — browser tab icon
+- [x] `<meta name="description">` — for Google search results
+- [ ] Google Analytics — add GA4 before sharing widely
+
+### Content
+- [ ] Hen house photo — only animal card still missing a real image
+- [ ] About the hosts — photo and short bio of Pete and family
+- [ ] Pricing / availability — even a basic "Weekends from $X / limited to X guests" line
+- [ ] FAQ — guests per stay, sleeping arrangements, kids, price
+
+### Trust & Social Proof
+- [ ] Testimonials — 2–3 quotes once first guests complete their stay
+- [ ] Instagram link — Cognac could build a following
+
+### Other
+- [ ] Mobile test on an actual phone before sharing widely
+
+---
+
 *Fortune Hollow · Lampasas County, Texas*
