@@ -16,6 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://fortunehollow.com/images/cognac.webp">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<script src="nav.js" defer></script>
 <style>
   :root {
     --straw: #e8d5a3;
@@ -28,6 +29,8 @@
     --milk: #f5f0e8;
     --gold: #c9973a;
   }
+
+  site-nav { display: contents; }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -67,8 +70,9 @@
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(30,18,8,0.18) 0%,
-      rgba(30,18,8,0.05) 35%,
+      rgba(30,18,8,0.55) 0%,
+      rgba(30,18,8,0.18) 15%,
+      rgba(30,18,8,0.05) 40%,
       rgba(30,18,8,0.55) 70%,
       rgba(30,18,8,0.78) 100%
     );
@@ -710,6 +714,9 @@
     right: 0;
     z-index: 10;
     padding: 0 24px;
+    background: rgba(20,12,5,0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .site-nav-inner {
@@ -761,17 +768,7 @@
 ════════════════════════════════════════════════════════════ -->
 <section class="hero">
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="index.html" class="site-nav-logo">Fortune Hollow</a>
-      <ul class="site-nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#animals">The Farm</a></li>
-        <li><a href="farm-visit-schedule.html">Full Schedule</a></li>
-        <li><a href="#book">Book</a></li>
-      </ul>
-    </div>
-  </nav>
+  <site-nav></site-nav>
 
   <div class="hero-img"></div>
 

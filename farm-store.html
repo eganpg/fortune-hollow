@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Store — Fortune Hollow · Lampasas, TX</title>
+<meta name="description" content="Raw Jersey milk, pasture-raised eggs, house-made butter, cream, and farm-raised chicken — at the end of our driveway in Lampasas County, Texas. Self-serve, honor system, no appointment needed.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fortunehollow.com/farm-store.html">
+<meta property="og:title" content="Fortune Hollow Farm Store — Lampasas, TX">
+<meta property="og:description" content="Raw Jersey milk, pasture-raised eggs, house-made butter, and farm-raised chicken. Self-serve at the end of our driveway. Honor system.">
+<meta property="og:image" content="https://fortunehollow.com/images/cognac.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fortunehollow.com/images/cognac.webp">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<script src="nav.js" defer></script>
+<style>
+  :root {
+    --straw: #e8d5a3;
+    --earth: #6b4c2a;
+    --clay: #a0683a;
+    --cream: #faf6ed;
+    --bark: #3b2612;
+    --sage: #7a8c6e;
+    --rust: #b04a2a;
+    --milk: #f5f0e8;
+    --gold: #c9973a;
+  }
+
+  site-nav { display: contents; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--bark);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    background-image:
+      radial-gradient(ellipse at 10% 20%, rgba(107,76,42,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(122,140,110,0.08) 0%, transparent 50%);
+  }
+
+  /* ─── NAV ──────────────────────────────────────────────────── */
+
+  .site-nav {
+    background: var(--bark);
+    padding: 0 24px;
+  }
+  .site-nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+  .site-nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .site-nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  .site-nav-links a {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .site-nav-links a:hover { color: rgba(255,255,255,0.85); }
+  .site-nav-links a.active { color: var(--straw); }
+
+  /* ─── PAGE WRAPPER ─────────────────────────────────────────── */
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  /* ─── HEADER ───────────────────────────────────────────────── */
+
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(107,76,42,0.12);
+  }
+  .header-eyebrow {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--clay);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1.08;
+    margin-bottom: 20px;
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--clay);
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .header-rule span {
+    height: 1px;
+    width: 80px;
+    background: var(--clay);
+    opacity: 0.35;
+    display: block;
+  }
+  .header-rule .icon { font-size: 1.2rem; }
+  .header-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 3vw, 1.3rem);
+    color: var(--earth);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ─── HOW IT WORKS ─────────────────────────────────────────── */
+
+  .how-section {
+    background: var(--bark);
+    border-radius: 14px;
+    padding: 44px 48px;
+    margin-bottom: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .how-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 10% 50%, rgba(160,104,58,0.2) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 50%, rgba(122,140,110,0.12) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .how-inner { position: relative; z-index: 1; }
+  .how-eyebrow {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--straw);
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .how-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 36px;
+  }
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+  .how-step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--straw);
+    opacity: 0.35;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .how-step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .how-step-desc {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.52);
+    line-height: 1.68;
+  }
+  .how-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 28px;
+  }
+  .how-payment {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .how-payment-label {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-right: 4px;
+  }
+  .payment-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+  }
+  .payment-pill strong {
+    font-weight: 400;
+    color: var(--straw);
+  }
+
+  /* ─── SHARED SECTION LABELS ────────────────────────────────── */
+
+  .section-eyebrow {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 10px;
+  }
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .section-heading em {
+    font-style: italic;
+    color: var(--clay);
+  }
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--earth);
+    line-height: 1.72;
+    margin-bottom: 36px;
+    max-width: 560px;
+  }
+
+  /* ─── PRODUCTS ─────────────────────────────────────────────── */
+
+  .products-section { margin-bottom: 72px; }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .product-card {
+    background: var(--milk);
+    border-radius: 10px;
+    border: 1px solid rgba(107,76,42,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-photo {
+    aspect-ratio: 4/3;
+    background: #ddd5c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .product-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .product-photo-label {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.75rem;
+    color: rgba(59,38,18,0.38);
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 8px;
+  }
+  .product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(122,140,110,0.88);
+    color: #fff;
+    z-index: 1;
+  }
+  .product-body {
+    padding: 18px 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 3px;
+  }
+  .product-variant {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--clay);
+    margin-bottom: 10px;
+  }
+  .product-desc {
+    font-size: 0.92rem;
+    color: var(--earth);
+    line-height: 1.68;
+    flex: 1;
+    margin-bottom: 14px;
+  }
+  .product-price {
+    border-top: 1px solid rgba(107,76,42,0.1);
+    padding-top: 12px;
+    margin-top: auto;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bark);
+  }
+  .price-placeholder {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.88rem;
+    color: rgba(107,76,42,0.38);
+  }
+
+  /* seasonal divider */
+  .seasonal-label {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin: 40px 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .seasonal-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--sage);
+    opacity: 0.3;
+  }
+
+  /* ─── AVAILABILITY ─────────────────────────────────────────── */
+
+  .availability-section {
+    background: var(--milk);
+    border: 1px solid rgba(107,76,42,0.1);
+    border-radius: 14px;
+    padding: 40px 44px;
+    margin-bottom: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .avail-divider {
+    background: rgba(107,76,42,0.12);
+    align-self: stretch;
+  }
+  .avail-option-icon {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  .avail-option-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 8px;
+  }
+  .avail-option-desc {
+    font-size: 0.95rem;
+    color: var(--earth);
+    line-height: 1.72;
+    margin-bottom: 18px;
+  }
+  .avail-cta {
+    display: inline-block;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(176,74,42,0.3);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .avail-cta:hover {
+    color: #963e23;
+    border-color: rgba(150,62,35,0.5);
+  }
+
+  /* ─── MAP ──────────────────────────────────────────────────── */
+
+  .map-section { margin-bottom: 72px; }
+
+  .map-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(107,76,42,0.12);
+    margin-top: 32px;
+  }
+  .map-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 360px;
+    border: none;
+  }
+  .map-address {
+    background: var(--milk);
+    border-top: 1px solid rgba(107,76,42,0.1);
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .map-address-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .map-address-text {
+    font-size: 0.95rem;
+    color: var(--earth);
+    line-height: 1.55;
+  }
+  .map-address-text strong {
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--bark);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .map-hours {
+    margin-left: auto;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .map-hours-label {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--clay);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .map-hours-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--bark);
+  }
+
+  /* ─── FARM BRIDGE ──────────────────────────────────────────── */
+
+  .bridge-section {
+    background: linear-gradient(135deg, rgba(107,76,42,0.06), rgba(122,140,110,0.07));
+    border-radius: 12px;
+    border: 1px solid rgba(107,76,42,0.1);
+    padding: 36px 40px;
+    margin-bottom: 48px;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+  .bridge-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    background: #d9cdb8;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .bridge-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bridge-eyebrow {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 10px;
+  }
+  .bridge-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .bridge-desc {
+    font-size: 0.97rem;
+    color: var(--earth);
+    line-height: 1.72;
+    margin-bottom: 16px;
+  }
+  .bridge-link {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(176,74,42,0.3);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .bridge-link:hover { color: #963e23; }
+
+  /* ─── RAW MILK DISCLOSURE ──────────────────────────────────── */
+
+  .disclosure {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: rgba(107,76,42,0.42);
+    line-height: 1.68;
+    margin-bottom: 0;
+    padding: 14px 18px;
+    border-left: 2px solid rgba(107,76,42,0.15);
+  }
+
+  /* ─── SITE FOOTER ──────────────────────────────────────────── */
+
+  .site-footer {
+    background: #2a1a0a;
+    padding: 36px 24px;
+    text-align: center;
+  }
+  .site-footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  .site-footer-sub {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.08em;
+  }
+  .site-footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .site-footer-links a {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .site-footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+  /* ─── RESPONSIVE ───────────────────────────────────────────── */
+
+  @media (max-width: 700px) {
+    .page { padding: 36px 16px 60px; }
+    .how-section { padding: 32px 24px; }
+    .how-steps { grid-template-columns: 1fr; gap: 24px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .availability-section {
+      grid-template-columns: 1fr;
+      padding: 30px 26px;
+    }
+    .avail-divider { display: none; }
+    .bridge-section { flex-direction: column; }
+    .bridge-photo { width: 100%; height: 200px; }
+  }
+  @media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .map-hours { display: none; }
+    .site-nav-links { gap: 14px; }
+    .site-nav-links a { font-size: 0.82rem; }
+  }
+</style>
+</head>
+<body>
+
+<site-nav active="store"></site-nav>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-eyebrow">Fortune Hollow · Lampasas County, Texas</div>
+    <h1>The Farm Store<br>at <em>Fortune Hollow</em></h1>
+    <div class="header-rule">
+      <span></span><span class="icon">🥛</span><span></span>
+    </div>
+    <p class="header-sub">Raw Jersey milk, pasture-raised eggs, house-made butter, fresh cream, and farm-raised chicken — at the end of our driveway. Self-serve. Honor system. No appointment needed.</p>
+  </header>
+
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="how-inner">
+      <div class="how-eyebrow">How it works</div>
+      <h2 class="how-heading">No register. No cashier.<br>Just take what you need.</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">01</div>
+          <div class="how-step-title">Stop by</div>
+          <div class="how-step-desc">The store is at the end of our driveway, open during daylight hours. Text ahead if you want to confirm something's in stock before you make the trip.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">02</div>
+          <div class="how-step-title">Grab what you need</div>
+          <div class="how-step-desc">Everything is labeled and priced. The cooler keeps milk and dairy at the right temperature. Take what you came for.</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">03</div>
+          <div class="how-step-title">Leave payment</div>
+          <div class="how-step-desc">Cash in the box or Venmo. Either works. We trust you — that's the whole idea.</div>
+        </div>
+      </div>
+      <hr class="how-divider">
+      <div class="how-payment">
+        <div class="how-payment-label">We accept</div>
+        <div class="payment-pill">💵 Cash</div>
+        <div class="payment-pill">Venmo &nbsp;·&nbsp; <strong>@[your-venmo]</strong></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PRODUCTS -->
+  <div class="products-section">
+    <div class="section-eyebrow">What's available</div>
+    <h2 class="section-heading">Straight from <em>the farm.</em></h2>
+    <p class="section-sub">Everything here comes from animals on this property. The milk is from Nan. The eggs are from hens who live outside on pasture. Nothing is factory-farmed or store-bought.</p>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Raw Jersey Milk</div>
+          <div class="product-variant">From Nan · Milked twice daily</div>
+          <div class="product-desc">Jersey milk is richer than anything you'll find at a grocery store — higher butterfat, creamier, and you can taste the difference. Nan is milked every morning at 6 am and every evening at 6 pm. What's in the cooler was pulled this morning.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Fresh Cream</div>
+          <div class="product-variant">Skimmed from Nan's milk</div>
+          <div class="product-desc">Skimmed from whole Jersey milk after it settles. Heavy, rich, and nothing like what's sold in cartons. Use it in coffee, cooking, or to make your own butter at home.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Pasture-Raised Eggs</div>
+          <div class="product-variant">From our laying hens · Sold by the dozen</div>
+          <div class="product-desc">Collected fresh each morning from hens that live outside on pasture. The yolks are deep orange — a sign of what a hen eats when she has room to forage. Sold by the dozen.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">House-Made Butter</div>
+          <div class="product-variant">Salted · Made from Nan's cream</div>
+          <div class="product-desc">Made in small batches from cream skimmed off Nan's milk. Lightly salted with good salt. The kind of butter that makes plain bread worth eating.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">House-Made Butter</div>
+          <div class="product-variant">Unsalted · Made from Nan's cream</div>
+          <div class="product-desc">Same small-batch process, no salt. Better for baking, or for anyone who prefers to control the seasoning themselves. Made fresh and available when cream supply allows.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Pasture-Raised Chicken</div>
+          <div class="product-variant">Whole birds · Cuts available on request</div>
+          <div class="product-desc">Raised on pasture in open-air tractors moved across the property daily. Whole birds are available in the store. Specific cuts are available on request for an additional charge — reach out ahead of time.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="seasonal-label">Also available when in season</div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-badge">When available</div>
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Farm Yogurt</div>
+          <div class="product-variant">Made from Nan's whole milk</div>
+          <div class="product-desc">Thick, cultured, and made in small batches from whole Jersey milk. Not always in stock — text ahead or follow us on Instagram to check before you drive out.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-photo">
+          <div class="product-badge">When available</div>
+          <div class="product-photo-label">photo coming soon</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Farm Cheese</div>
+          <div class="product-variant">Made from Nan's milk · Variety varies</div>
+          <div class="product-desc">Made in small batches as time and milk supply allow. What's available depends on what we've been making that week. Always worth checking before the trip.</div>
+          <div class="product-price"><span class="price-placeholder">Pricing coming soon</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- AVAILABILITY -->
+  <div class="availability-section">
+    <div class="avail-option">
+      <div class="avail-option-icon">💬</div>
+      <div class="avail-option-title">Text before you drive out</div>
+      <div class="avail-option-desc">Stock moves fast, especially milk and eggs. If you want to make sure we have what you need before making the trip, send a quick text and we'll get right back to you.</div>
+      <a href="sms:[YOUR-PHONE]?body=Hi, checking what%27s available at the Fortune Hollow farm store." class="avail-cta">Text us to check stock →</a>
+    </div>
+    <div class="avail-divider"></div>
+    <div class="avail-option">
+      <div class="avail-option-icon">📸</div>
+      <div class="avail-option-title">Follow us on Instagram</div>
+      <div class="avail-option-desc">We post stock updates, what's fresh this week, and what's coming up next. The best way to stay ahead of what's available without making an extra trip.</div>
+      <a href="https://instagram.com/[your-handle]" class="avail-cta" target="_blank" rel="noopener">Follow @[your-handle] →</a>
+    </div>
+  </div>
+
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="section-eyebrow">Find us</div>
+    <h2 class="section-heading">End of the driveway.<br><em>Can't miss it.</em></h2>
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=750+Country+Road+1403,+Lampasas,+TX+76550&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Fortune Hollow Farm Store location">
+      </iframe>
+      <div class="map-address">
+        <div class="map-address-icon">📍</div>
+        <div class="map-address-text">
+          <strong>Fortune Hollow Farm Store</strong>
+          750 Country Road 1403 &nbsp;·&nbsp; Lampasas, TX 76550
+        </div>
+        <div class="map-hours">
+          <div class="map-hours-label">Open</div>
+          <div class="map-hours-value">Daylight hours</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FARM BRIDGE -->
+  <div class="bridge-section">
+    <div class="bridge-photo">
+      <img src="images/cognac.webp" alt="Cognac the Longhorn at Fortune Hollow">
+    </div>
+    <div>
+      <div class="bridge-eyebrow">More than a farm store</div>
+      <h3 class="bridge-heading">The same animals.<br>The same pasture.</h3>
+      <p class="bridge-desc">Fortune Hollow is a working farm stay where guests spend a full weekend alongside us — milking Nan, collecting eggs, walking Cognac, and learning what it actually takes to run a small farm. If you've ever wondered what's behind what you're buying, we'd love to show you.</p>
+      <a href="index.html" class="bridge-link">Learn about the farm stay experience →</a>
+    </div>
+  </div>
+
+
+  <!-- RAW MILK DISCLOSURE -->
+  <div class="disclosure">
+    Raw milk is sold directly from the farm and has not been pasteurized. Raw milk may contain harmful bacteria. Sold under Texas law permitting direct farm-to-consumer raw milk sales. Consume at your own discretion.
+  </div>
+
+</div><!-- /page -->
+
+
+<footer class="site-footer">
+  <div class="site-footer-logo">Fortune Hollow</div>
+  <div class="site-footer-sub">Lampasas County, Texas</div>
+  <nav class="site-footer-links">
+    <a href="index.html">Farm Stay</a>
+    <a href="farm-visit-schedule.html">Full Schedule</a>
+    <a href="farm-store.html">Farm Store</a>
+    <a href="mailto:pete@fortunehollow.com">pete@fortunehollow.com</a>
+  </nav>
+</footer>
+
+</body>
+</html>
